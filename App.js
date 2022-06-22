@@ -4,6 +4,7 @@ import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/home';
 import Text from './src/components/text/text';
+import { View } from 'react-native';
 
 
 
@@ -23,11 +24,14 @@ export default function App() {
   }
 
   return (
+    <>
     <NavigationContainer theme={DarkTheme} >
-    <Stack.Navigator screenOptions={{headerShown:false}}>
-      <Stack.Screen  name="Home" component={Home} />
-    </Stack.Navigator>
-  </NavigationContainer>
+        <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen  name="Home" component={Home} />
+       </Stack.Navigator>
+    </NavigationContainer>
+      <StatusBar style="light" />
+    </>
   );
 }
 
