@@ -27,7 +27,7 @@ export default function Home({navigation}){
           <View style={[styles.circle, {backgroundColor:color}]} />
           <Text preset="h4" style={styles.itemName}>{name}</Text>
           </View>
-
+         {/* here use details icons */}
           <AntDesign name="right" size={24} color="white" />
         </Pressable>
       )
@@ -65,6 +65,6 @@ const styles = StyleSheet.create({
   separator:{
    borderBottomColor:colors.white,
    borderWidth:0.5,
-   padding:5
+   padding:6
   }
 })

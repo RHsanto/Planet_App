@@ -10,7 +10,7 @@ export default function Details(){
    <SafeAreaView style={styles.container}>
     <PlanetHeader backBtn={true}/>
     <View>
-      <Text>Hello Sir</Text>
+      <Text>Hello Details</Text>
     </View>
    </SafeAreaView>
   )
