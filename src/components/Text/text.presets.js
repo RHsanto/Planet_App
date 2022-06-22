@@ -14,7 +14,7 @@ const BASE_BOLD = {
 }
 
 const BOLD = {
-  fontFamily:typography.primaryBold,
+  fontFamily:typography.primary,
   color:colors.white
 }
 
