@@ -7,7 +7,27 @@ import { PLANET_LIST } from "../data/planet.data";
 import { spacing } from "../theme/spacing";
 import { AntDesign } from '@expo/vector-icons';
 
+
 export default function Home({navigation}){
+    {/* here render all data */}
+  const renderItem=({item})=>{
+    const {name, color}= item
+    return (
+      <Pressable  onPress={()=>{
+        navigation.navigate('Details',{planet:item})
+        }}
+         style={styles.item}>
+          <View style={{flexDirection:'row', alignItems:'center'}}>
+             <View style={[styles.circle, {backgroundColor:color}]} />
+             <Text preset="h4" style={styles.itemName}>{name}</Text>
+          </View>
+    {/* here use details icons */}
+         <AntDesign name="right" size={24} color="white" />
+      </Pressable>
+    )
+  }
+
+
   return (
    <SafeAreaView style={styles.container}>
    <PlanetHeader/> 
@@ -16,22 +36,7 @@ export default function Home({navigation}){
    contentContainerStyle={styles.lists}
    data={PLANET_LIST}
    keyExtractor={(item)=>item.name}
-   renderItem={({item,index})=>{
-    const {name, color}= item
-      return (
-        <Pressable  onPress={()=>{
-         navigation.navigate('Details',{planet:item})
-        }}
-        style={styles.item}>
-          <View style={{flexDirection:'row', alignItems:'center'}}>
-          <View style={[styles.circle, {backgroundColor:color}]} />
-          <Text preset="h4" style={styles.itemName}>{name}</Text>
-          </View>
-         {/* here use details icons */}
-          <AntDesign name="right" size={24} color="white" />
-        </Pressable>
-      )
-   }}
+   renderItem={renderItem}
    ItemSeparatorComponent={()=> <View style={styles.separator}/>}
    />
    </SafeAreaView>
