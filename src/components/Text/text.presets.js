@@ -1,7 +1,5 @@
-import { colors } from "../../theme/colors"
-import { typography } from "../../theme/typography"
-
-
+import { colors } from "../../theme/colors";
+import { typography } from "../../theme/typography";
 
 const BASE ={
   fontFamily:typography.primary,
@@ -9,24 +7,20 @@ const BASE ={
   color:colors.white
 }
 
-const BASE_BOLD ={
-fontFamily:typography.primaryBold,
-fontSize:16,
-color:colors.white
-
+const BASE_BOLD = {
+  fontFamily:typography.primaryBold,
+  fontSize:16,
+  color:colors.white
 }
 
-const BOLD ={
+const BOLD = {
   fontFamily:typography.primaryBold,
   color:colors.white
 }
 
-
 export const presets={
-
   default:BASE,
   bold:BOLD,
-
   h1:{
     ...BOLD,
     fontSize:30,
@@ -41,7 +35,7 @@ export const presets={
   },
   h4:{
     ...BASE_BOLD,
-    fontSize:18,
+    fontSize:17,
   },
  small:{
   ...BASE,
